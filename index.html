@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>OpacityMap Demo</title>
+	<script src="opacity.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+	<script>
+		window.onload = function (){
+			OpacityMap.setOpacityMap('opacity', 'image.jpg', 'map.jpg');
+			OpacityMap.setOpacityMap('op2', 'complex-image.jpg', 'complex-map.jpg');
+		}
+	</script>
+</head>
+<body>
+	<div id="maincontainer">
+		<h1>Mapas de Opacidad con Canvas</h1>
+		<p>Tomando un JPG de la imagen que le queremos aplicar transparecia y otra imagen que actue como mapa de opacidad podemos obtener resultados comparables a losde un PNG con transparencia Alpha.</p>
+		<h2>Transparencia sencilla</h2>
+		<p>Para el primer ejemplo usaremos una imagen pequeña con una transparencia gradual.</p>
+		<div id="wrap1">
+			<div class="phase">
+				<img src="image.jpg" alt="Imagen en Bruto" />
+				<p>Imagen en bruto.</p>
+			</div>
+			<div class="phase">
+				<img src="map.jpg" alt="Mapa de Opacidad" />
+				<p>Mapa de Opacidad.</p>
+			</div>
+			<div class="phase">
+				<canvas id="opacity" width="100" height="100"></canvas>
+				<p>Resultado Canvas.</p>
+			</div>
+			<div class="phase">
+				<img src="result.png" alt="Result in PNG Format" />
+				<p>Imagen en PNG.</p>
+			</div>
+		</div>
+		<h2>Ejemplo más complejo</h2>
+		<p>Esta vez será una imagen más complicada aunque con niveles de opacidad no graduales.</p>
+		<div id="wrap2">
+			<div class="phase">
+				<img src="complex-image.jpg" alt="Imagen en Bruto" />
+				<p>Imagen en Bruto.</p>
+			</div>
+			<div class="phase">
+				<img src="complex-map.jpg" alt="Mapa de Opacidad" />
+				<p>Mapa de Opacidad.</p>
+			</div>
+			<div class="phase">
+				<canvas id="op2" width="400" height="582"></canvas>
+				<p>Resultado Canvas.</p>
+			</div>
+			<div class="phase">
+				<img src="result-complex.png" alt="Resultado en PNG" />
+				<p>Imagen en PNG.</p>
+			</div>
+		</div>	
+	</div>
+</body>
+</html>
